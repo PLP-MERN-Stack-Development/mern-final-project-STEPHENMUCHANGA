@@ -1,52 +1,206 @@
-# MERN Stack Capstone Project
+# shamba-smart
+🌱 ShambaSmart – AI-Powered Agriculture Platform for Kenya
+📘 Overview
 
-This assignment focuses on designing, developing, and deploying a comprehensive full-stack MERN application that showcases all the skills you've learned throughout the course.
+ShambaSmart is Kenya’s first AI-powered platform for sustainable agriculture.
+It leverages Artificial Intelligence (AI) and the MERN stack (MongoDB, Express.js, React.js, Node.js) to transform how farmers, agronomists, and agricultural institutions access real-time insights about soil health, crop recommendations, and climate predictions.
 
-## Assignment Overview
+The goal is to maximize yields, improve environmental sustainability, and empower Kenyan farmers through technology.
 
-You will:
-1. Plan and design a full-stack MERN application
-2. Develop a robust backend with MongoDB, Express.js, and Node.js
-3. Create an interactive frontend with React.js
-4. Implement testing across the entire application
-5. Deploy the application to production
+🌍 Core Features
 
-## Getting Started
+AI Soil Analysis – Analyze soil nutrient content and health in real time.
 
-1. Accept the GitHub Classroom assignment
-2. Clone the repository to your local machine
-3. Follow the instructions in the `Week8-Assignment.md` file
-4. Plan, develop, and deploy your capstone project
+Crop Recommendations – AI-driven suggestions based on soil data, local weather, and market demand.
 
-## Files Included
+Climate Insights – Real-time weather data and predictive analytics from Kenya Meteorological Department APIs.
 
-- `Week8-Assignment.md`: Detailed assignment instructions
+County & Sub-County Mapping – Supports all 47 counties, their sub-counties, constituencies, and locations for localized insights.
 
-## Requirements
+Yield Prediction – Machine learning models forecast yield based on historical and live data.
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git and GitHub account
-- Accounts on deployment platforms (Render/Vercel/Netlify/etc.)
+Farm Analytics Dashboard – Interactive charts to track performance, sustainability, and profit metrics.
 
-## Project Ideas
+Multilingual Interface – English, Swahili, and French support.
 
-The `Week8-Assignment.md` file includes several project ideas, but you're encouraged to develop your own idea that demonstrates your skills and interests.
+Responsive Design – Works seamlessly across desktop and mobile devices.
 
-## Submission
+🧠 AI Integration
 
-Your project will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Model Hosting: TensorFlow.js / PyTorch models deployed via a Flask or FastAPI microservice.
 
-1. Commit and push your code regularly
-2. Include comprehensive documentation
-3. Deploy your application and add the live URL to your README.md
-4. Create a video demonstration and include the link in your README.md
+ML Models:
 
-## Resources
+Soil Nutrient Prediction Model
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [GitHub Classroom Guide](https://docs.github.com/en/education/manage-coursework-with-github-classroom) 
+Crop Recommendation Engine
+
+Weather Pattern Prediction Model
+
+Yield Estimation Model
+
+Data Sources:
+
+Kenya Meteorological Department (KMD) API
+
+NASA POWER API for climate and solar data
+
+Kenya Soil Survey datasets
+
+FAO & OpenAgriData repositories
+
+🧩 Tech Stack
+Layer	Technology
+Frontend	React.js, Tailwind CSS, Axios, Chart.js, React Router
+Backend	Node.js, Express.js, RESTful APIs
+Database	MongoDB (Atlas or local), Mongoose ORM
+AI Layer	TensorFlow.js / Flask API for ML models
+Authentication	JWT (JSON Web Tokens), bcrypt.js
+Cloud Services	AWS / Vercel / Render
+Version Control	Git + GitHub
+DevOps	Docker (optional), GitHub Actions for CI/CD
+📁 Project Structure
+ShambaSmart/
+│
+├── frontend/                # React app (Vite + Tailwind)
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   └── App.jsx
+│   ├── public/
+│   └── package.json
+│
+├── backend/                 # Express API
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   └── server.js
+│   ├── package.json
+│
+├── ai-service/              # Python microservice for ML
+│   ├── models/
+│   ├── api/
+│   └── requirements.txt
+│
+├── .env.example             # Sample environment variables
+├── .gitignore
+├── README.md
+└── vercel.json
+
+⚙️ Environment Setup
+1️⃣ Prerequisites
+
+Ensure the following are installed:
+
+Node.js
+ (v20 or higher)
+
+MongoDB
+ or MongoDB Atlas account
+
+Python
+ (for AI microservice)
+
+Git
+
+Code editor (VS Code recommended)
+
+2️⃣ Clone Repository
+git clone https://github.com/your-username/shambasmart.git
+cd shambasmart
+
+3️⃣ Setup Backend
+cd backend
+npm install
+npm run dev
+
+
+Create .env in backend/ with:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_jwt_secret
+AI_API_URL=http://localhost:8000
+
+4️⃣ Setup Frontend
+cd frontend
+npm install
+npm run dev
+
+
+Create .env in frontend/:
+
+VITE_API_BASE_URL=http://localhost:5000
+
+5️⃣ Setup AI Microservice
+cd ai-service
+python -m venv venv
+source venv/bin/activate      # (or venv\Scripts\activate on Windows)
+pip install -r requirements.txt
+python app.py
+
+🚀 Deployment Options
+Platform	Description
+Vercel	Best for frontend React hosting
+Render	Perfect for Node.js & Express backend
+Railway.app / Cyclic.sh	Alternative free Node hosting
+MongoDB Atlas	Cloud-hosted database
+AWS EC2 / Lightsail	Full-stack scalable deployment
+Docker + GitHub Actions	For containerized CI/CD setup
+🧱 Deployment Steps
+Frontend (Vercel)
+
+Push frontend to GitHub
+
+Connect GitHub repo to Vercel
+
+Set environment variable VITE_API_BASE_URL to backend URL
+
+Deploy
+
+Backend (Render)
+
+Push backend to GitHub
+
+Connect GitHub repo to Render
+
+Set environment variables from .env
+
+Deploy
+
+AI Microservice
+
+Deploy Flask app on Render / AWS EC2 / Hugging Face Spaces
+
+Expose endpoint (e.g. https://ai.shambasmart.co.ke/analyze)
+
+📊 Future Enhancements
+
+Integration with IoT soil sensors
+
+Mobile App (React Native) version
+
+AI chat assistant for farmers using LLM fine-tuning
+
+Government and NGO integration dashboards
+
+👨🏽‍💻 Authors
+
+Stephen Muchanga
+📧 info@shambasmart.co.ke
+
+🌍 Nairobi, Kenya
+
+
+# Deliverables
+1. Link to the deployed application
+https://shambasmart.vercel.app/
+2. Link to a 5-10 minute video demonstration
+Coming soon...
+3. Screenshots of key features
+[Images](screenshots/)
